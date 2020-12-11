@@ -130,7 +130,7 @@ def main():
     
     if page_selection == "Home":
         st.markdown(html_template.format('royalblue','white'), unsafe_allow_html=True)
-        st.image('resources/imgs/image.png',use_column_width=True)
+        st.image('resources/imgs/Home.png',use_column_width=True)
         #st.markdown(title_template, unsafe_allow_html=True)
 
     if page_selection == "About":
