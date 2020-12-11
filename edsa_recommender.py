@@ -72,7 +72,7 @@ def main():
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
-    page_options = ["Home","Recommender System","About","Exploratory Data Analysis","Recommend a movie","Recommender Performance","Solution Overview"]
+    page_options = ["Home","Recommender System","About","Exploratory Data Analysis","Recommender Performance","Solution Overview"]
 
     # -------------------------------------------------------------------
     # ----------- !! THIS CODE MUST NOT BE ALTERED !! -------------------
@@ -210,52 +210,11 @@ def main():
             st.subheader("Popular cast")
             st.image('resources/imgs/cast.png',use_column_width=True)
 
-    if page_selection == "Recommend a movie":
-        st.title("Recommend a movie")
-        sys = st.radio("Select an algorithm",
-                       ('Content Based Filtering',
-                        'Collaborative Based Filtering'))
-
-        # # User-based preferences
-        # st.write('### Enter Your Three Favorite Movies')
-        # movie_1 = st.selectbox('First Option',title_list[14930:15200])
-        # movie_2 = st.selectbox('Second Option',title_list[25055:25255])
-        # movie_3 = st.selectbox('Third Option',title_list[21100:21200])
-        # fav_movies = [movie_1,movie_2,movie_3]
-
-        # Perform top-10 movie recommendation generation
-            
-        # if sys == 'Content Based Filtering':
-            
-        #   recommender = joblib.load(open(os.path.join('resources/models/Base_SVD_model.pkl'),"rb"))
-		#   recommend = recommender.predict([title_list])
-            
-        #
-        #     if st.button("Recommend"):
-        #         try:
-        #             with st.spinner('Crunching the numbers...'):
-        #                 top_recommendations = content_model(movie_list=fav_movies,
-        #                                                     top_n=10)
-        #             st.title("We think you'll like:")
-        #             for i,j in enumerate(top_recommendations):
-        #                 st.subheader(str(i+1)+'. '+j)
-        #         except:
-        #             st.error("Oops! Looks like this algorithm does't work.\
-        #                       We'll need to fix it!")
-
-
-        # if sys == 'Collaborative Based Filtering':
-        #     if st.button("Recommend"):
-        #         try:
-        #             with st.spinner('Crunching the numbers...'):
-        #                 top_recommendations = collab_model(movie_list=fav_movies,
-        #                                                    top_n=10)
-        #             st.title("We think you'll like:")
-        #             for i,j in enumerate(top_recommendations):
-        #                 st.subheader(str(i+1)+'. '+j)
-        #         except:
-        #             st.error("Oops! Looks like this algorithm does't work.\
-        #                       We'll need to fix it!")
+    # if page_selection == "Recommend a movie":
+    #     st.title("Recommend a movie")
+    #     sys = st.radio("Select an algorithm",
+    #                    ('Content Based Filtering',
+    #                     'Collaborative Based Filtering'))
 
 
     if page_selection == "Recommender Performance":
