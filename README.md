@@ -126,7 +126,8 @@ conda install -c conda-forge scikit-surprise
 3. Clone your copy of the API repo, and navigate to its root directory:
 
 ```bash
-git clone https://github.com/{your-account-name}/unsupervised-predict-streamlit-template.git
+git clone https://github.com/{your-account-name}/unsupervised-predict-streamlit-template.git 
+
 cd unsupervised-predict-streamlit-template/
 ```
 
