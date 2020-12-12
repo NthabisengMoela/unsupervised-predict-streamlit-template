@@ -179,7 +179,7 @@ def main():
 
         if st.checkbox("ratings"):
             st.subheader("Movie ratings")
-            st.image('resources/imgs/rating.png',use_column_width=True)
+            st.image('resources/imgs/rating.PNG',use_column_width=True)
 
         # if st.checkbox("correlation"):
         #     st.subheader("Correlation between features")
@@ -191,7 +191,7 @@ def main():
         
         if st.checkbox("genres"):
             st.subheader("Top Genres")
-            st.image('resources/imgs/top_genres.png',use_column_width=True)
+            st.image('resources/imgs/top_genres.PNG',use_column_width=True)
         
         # if st.checkbox("movies released per year"):
         #     st.subheader("Movies released per year")
@@ -199,11 +199,11 @@ def main():
 
         if st.checkbox("tags"):
             st.subheader("Top tags")
-            st.image('resources/imgs/top_tags.png',use_column_width=True)
+            st.image('resources/imgs/top_tags.PNG',use_column_width=True)
 
         if st.checkbox("cast"):
             st.subheader("Popular cast")
-            st.image('resources/imgs/cast.png',use_column_width=True)
+            st.image('resources/imgs/cast.PNG',use_column_width=True)
 
     # if page_selection == "Recommend a movie":
     #     st.title("Recommend a movie")
@@ -215,7 +215,7 @@ def main():
     if page_selection == "Recommender Performance":
         st.title("Recommendation Performance Evaluation")
         st.write("RMSE of the recommendation models to show their performance")
-        st.image('resources/imgs/performance_df.png',use_column_width=True)
+        st.image('resources/imgs/performance_df.PNG',use_column_width=True)
 
     if page_selection == "Solution Overview":
         st.title("Solution Overview")
