@@ -50,24 +50,24 @@ def data_preprocessing(df):
     Pandas Dataframe
         Subset of movies selected for content-based filtering.
     """
-    lmovies = df.copy()
+    fmovies = df.copy()
     # Split genre data into individual words.
-    lmovies['keyWords'] = lmovies['genres'].str.replace('|', ' ')
-    lmovies['genres'] = lmovies['genres'].apply(str).apply(lambda x: x.split('|'))
-    return lmovies
+    fmovies['keyWords'] = fmovies['genres'].str.replace('|', ' ')
+    fmovies['genres'] = fmovies['genres'].apply(str).apply(lambda x: x.split('|'))
+    return fmovies
 
 # !! DO NOT CHANGE THIS FUNCTION SIGNATURE !!
 # You are, however, encouraged to change its content.  
 def content_model(movie_list,top_n=10):
     """
-    Performs Content filtering based upon a list of movies supplied
+    Performs Content filtering using a list of movies supplied
        by the app user.
     Parameters
     ----------
     movie_list : list (str)
-        Favorite movies chosen by the app user.
+        Favorite movies selected by the app user.
     top_n : type
-        Number of top recommendations to return to the user.
+        number of top recommendations to return to the user.
     Returns
     -------
     list (str)
@@ -75,10 +75,10 @@ def content_model(movie_list,top_n=10):
     """
     #global movies
     # removing the favorite movie list
-    dmovies = data_preprocessing(movies)
+    nmovies = data_preprocessing(movies)
     genre_list = []
     for i in movie_list:
-        genre_list.append(list(dmovies[dmovies['title']==i]['genres'])[0])
+        genre_list.append(list(nmovies[nmovies['title']==i]['genres'])[0])
     
 
 
@@ -86,8 +86,8 @@ def content_model(movie_list,top_n=10):
     mlb2 =  MultiLabelBinarizer()
     mlb2.fit_transform(genre_list)
     genre_list = mlb2.classes_
-    dmovies = dmovies[~dmovies['title'].isin(movie_list)]
-    mgen = dmovies
+    nmovies = nmovies[~nmovies['title'].isin(movie_list)]
+    mgen = nmovies
     for gen in genre_list:
         mgen = mgen[mgen['keyWords'].str.contains(gen)]
         if len(mgen)<=top_n:
@@ -98,5 +98,5 @@ def content_model(movie_list,top_n=10):
         
     asscr = ratings[ratings['movieId'].isin(mgen2['movieId'].values)][['movieId', 'rating']]
     top_movies = (asscr.groupby(['movieId']).mean().reset_index()).sort_values('rating', ascending =False)[:top_n]
-    return list((dmovies[dmovies['movieId'].isin(top_movies['movieId'].values)]['title']).values)
+    return list((nmovies[nmovies['movieId'].isin(top_movies['movieId'].values)]['title']).values)
 
