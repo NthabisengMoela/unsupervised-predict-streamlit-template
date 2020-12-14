@@ -73,7 +73,7 @@ def main():
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
-    page_options = ["Home","Recommender System","About","Exploratory Data Analysis","Recommender Performance","Solution Overview"]
+    page_options = ["Home","Recommender System","About","Exploratory Data Analysis","Solution Overview"]
 
     # -------------------------------------------------------------------
     # ----------- !! THIS CODE MUST NOT BE ALTERED !! -------------------
@@ -91,7 +91,7 @@ def main():
 
         # User-based preferences
         st.write('### Enter Your Three Favorite Movies')
-        movie_1 = st.selectbox('Fisrt Option',title_list[14930:15200])
+        movie_1 = st.selectbox('First Option',title_list[14930:15200])
         movie_2 = st.selectbox('Second Option',title_list[25055:25255])
         movie_3 = st.selectbox('Third Option',title_list[21100:21200])
         fav_movies = [movie_1,movie_2,movie_3]
@@ -175,7 +175,7 @@ def main():
             #     st.write(raw[['sentiment', 'message']]) # will write the df to the page
 
     if page_selection == "Exploratory Data Analysis":
-        st.title('Exploratory Data Science')
+        st.title('Exploratory Data Analysis')
 
         if st.checkbox("ratings"):
             st.subheader("Movie ratings")
@@ -212,14 +212,11 @@ def main():
     #                     'Collaborative Based Filtering'))
 
 
-    if page_selection == "Recommender Performance":
-        st.title("Recommendation Performance Evaluation")
+    if page_selection == "Solution Overview":
+        st.title("Solution Overview")
         st.write("RMSE of the recommendation models to show their performance")
         st.image('resources/imgs/performance_df.PNG',use_column_width=True)
 
-    if page_selection == "Solution Overview":
-        st.title("Solution Overview")
-        st.write("Describe your winning approach on this page")
 
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
