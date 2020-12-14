@@ -58,7 +58,7 @@ def data_preprocessing(df):
 
 # !! DO NOT CHANGE THIS FUNCTION SIGNATURE !!
 # You are, however, encouraged to change its content.  
-def content_model(movie_list,top_n=15):
+def content_model(movie_list,top_n=20):
     """
     Performs Content filtering using a list of movies supplied
        by the app user.
